@@ -1,0 +1,50 @@
+{
+  "info": {
+    "name": "Reactive Product Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/api/v1/products"
+    }
+  ],
+  "item": [
+    {
+      "name": "Create product",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sku\": \"SKU-001\",\n  \"name\": \"Mechanical Keyboard\",\n  \"description\": \"75% keyboard\",\n  \"price\": 149.90,\n  \"stock\": 20\n}"
+        },
+        "url": "{{baseUrl}}"
+      }
+    },
+    {
+      "name": "List products",
+      "request": {"method": "GET", "url": "{{baseUrl}}"}
+    },
+    {
+      "name": "Get product",
+      "request": {"method": "GET", "url": "{{baseUrl}}/1"}
+    },
+    {
+      "name": "Update product",
+      "request": {
+        "method": "PUT",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sku\": \"SKU-001\",\n  \"name\": \"Mechanical Keyboard Pro\",\n  \"description\": \"Updated product\",\n  \"price\": 179.90,\n  \"stock\": 12\n}"
+        },
+        "url": "{{baseUrl}}/1"
+      }
+    },
+    {
+      "name": "Delete product",
+      "request": {"method": "DELETE", "url": "{{baseUrl}}/1"}
+    }
+  ]
+}

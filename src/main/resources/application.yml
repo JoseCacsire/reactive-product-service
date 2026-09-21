@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: reactive-product-service
+  r2dbc:
+    url: r2dbc:h2:mem:///productsdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+
+server:
+  port: 8080
